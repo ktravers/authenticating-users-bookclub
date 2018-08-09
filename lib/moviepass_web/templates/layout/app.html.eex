@@ -15,11 +15,9 @@
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
           </ul>
         </nav>
-        <div style="background-color: black;">
         <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="https://www.moviepass.com/assets/images/brand/logo-reversed.svg" alt="Phoenix Framework Logo"/>
+          <img src="<%= Routes.static_path(@conn, "/images/moviepass.png") %>" alt="Phoenix Framework Logo"/>
         </a>
-        </div>
       </section>
     </header>
     <main role="main" class="container">
