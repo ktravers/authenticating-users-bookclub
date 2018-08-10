@@ -1,10 +1,11 @@
 # Authenticating Users
 
+![](https://media.giphy.com/media/HVr4gFHYIqeti/giphy.gif)
+
 ## Learning Objectives
 - Auth depedencies
 - Using new changesets
 - Plugs
-- Handling sign up vs sign in
 
 
 ### Auth dependencies

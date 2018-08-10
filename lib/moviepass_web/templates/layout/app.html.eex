@@ -21,7 +21,7 @@
             <% end %>
           </ul>
         </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
+        <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" class="phx-logo">
           <img src="<%= Routes.static_path(@conn, "/images/moviepass.png") %>" alt="Phoenix Framework Logo"/>
         </a>
       </section>
