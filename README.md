@@ -108,6 +108,10 @@ scheme - the request scheme as an atom, example: :http
 query_string - the request query string as a binary, example: "foo=bar"
 ```
 
+What kinds of things could we do with plugs?
+
+Check for mobile maybe? 
+
 ```
 defmodule MoviepassWeb.Mobile do
   import Plug.Conn
