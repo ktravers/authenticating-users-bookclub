@@ -19,6 +19,12 @@ defmodule Moviepass.Accounts do
     |> Repo.insert()
   end
 
+  def create_user_from_token(attrs \\ %{}) do
+    %User{}
+    |> User.token_changeset(attrs)
+    |> Repo.insert()
+  end
+
   def register_user(attrs \\ %{}) do
     %User{}
     |> User.registration_changeset(attrs)
@@ -27,6 +33,12 @@ defmodule Moviepass.Accounts do
 
   def get_user_by_email(email) do
     from(u in User, join: c in assoc(u, :credential), where: c.email == ^email)
+    |> Repo.one()
+    |> Repo.preload(:credential)
+  end
+
+  def get_user_by_token(token) do
+    from(u in User, join: c in assoc(u, :credential), where: c.token == ^token)
     |> Repo.one()
     |> Repo.preload(:credential)
   end

@@ -1,6 +1,7 @@
 defmodule MoviepassWeb.OauthController do
   use MoviepassWeb, :controller
   alias MoviepassWeb.Oauth.LearnClient
+  alias MoviepassWeb.Auth
 
   def index(conn, _params) do
     render conn, "index.html"
@@ -21,10 +22,10 @@ defmodule MoviepassWeb.OauthController do
         |> redirect(to: "/")
       _ ->
         %{"access_token" => access_token} = Jason.decode!(response.body)
-      IO.puts(access_token)
-      conn
-      |> redirect(to: Routes.oauth_path(conn, :index))
 
+      conn
+      |> Auth.login_with_token(access_token)
+      |> redirect(to: Routes.oauth_path(conn, :index))
     end
   end
 end

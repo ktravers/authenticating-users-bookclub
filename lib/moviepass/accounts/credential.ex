@@ -6,6 +6,7 @@ defmodule Moviepass.Accounts.Credential do
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
+    field :token, :string
     belongs_to :user, Moviepass.Accounts.User
 
     timestamps()
@@ -20,6 +21,11 @@ defmodule Moviepass.Accounts.Credential do
     |> unique_constraint(:email)
     |> validate_strength(:password)
     |> put_pass_hash()
+  end
+
+  def token_changeset(credential, attrs) do
+    credential
+    |> cast(attrs, [:token])
   end
 
   def put_pass_hash(changeset) do

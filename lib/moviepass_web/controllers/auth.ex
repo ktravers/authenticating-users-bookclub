@@ -26,9 +26,13 @@ defmodule MoviepassWeb.Auth do
     end
   end
 
-  # def login_with_token(conn, token) do
-
-  # end
+  def login_with_token(conn, token) do
+    user = Accounts.get_user_by_token(token)
+    case user do
+      user -> {:ok, login(conn, user)}
+      true -> Accounts.create_user_from_token(%{token: token})
+    end
+  end
 
   def logout(conn) do
     configure_session(conn, drop: true)
