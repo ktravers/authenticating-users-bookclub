@@ -127,3 +127,5 @@ defmodule MoviepassWeb.Mobile do
 end
 ```
 
+Challenge 2
+- We already have oauth setup in the application but we need some way to persist the user's access token. We should be thinking about how we can store that information in the session using a plug or whatever you like. In addition, what about persisting that oauth integration like we do in Learn.
