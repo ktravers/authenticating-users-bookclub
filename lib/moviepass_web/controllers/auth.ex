@@ -26,6 +26,10 @@ defmodule MoviepassWeb.Auth do
     end
   end
 
+  # def login_with_token(conn, token) do
+
+  # end
+
   def logout(conn) do
     configure_session(conn, drop: true)
   end

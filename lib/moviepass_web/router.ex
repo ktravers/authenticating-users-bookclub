@@ -20,6 +20,9 @@ defmodule MoviepassWeb.Router do
     get "/", PageController, :index
     resources "/users", UserController
     resources "/sessions", SessionController
+    get "/oauth/learn", OauthController, :new
+    get "/oauth/learn/callback", OauthController, :create
+    get "/oauth", OauthController, :index
   end
 
   # Other scopes may use custom stacks.

@@ -17,6 +17,7 @@
             <% else %>
               <li><%= link "Register", to: Routes.user_path(@conn, :new) %></li>
               <li><%= link "Login", to: Routes.session_path(@conn, :new) %></li>
+              <li><%= link "Login with Learn", to: Routes.oauth_path(@conn, :new) %></li>
             <% end %>
           </ul>
         </nav>
